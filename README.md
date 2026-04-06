@@ -49,6 +49,8 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented user stories:
 
 <img src='https://i.imgur.com/SSOFqri.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+![SSOFqri](https://github.com/user-attachments/assets/a2e834ce-0507-4417-b01b-6d9c4b97fa93)
+
 
 GIF created with [ScreenToGif](https://www.screentogif.com/) for Windows
 
