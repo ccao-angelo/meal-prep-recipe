@@ -1,0 +1,276 @@
+/* --- GLOBAL RESET AND FONTS --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fdfaf6;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #333;
+}
+
+/* --- CUSTOM SCROLLBAR --- */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #fdfaf6;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #d97706;
+  border-radius: 10px;
+  border: 3px solid #fdfaf6;
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* --- HEADER --- */
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 3rem;
+  color: #d97706;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.emoji-logo {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+header:hover .emoji-logo {
+  transform: rotate(-15deg) scale(1.2);
+}
+
+.subtitle {
+  color: #666;
+  font-size: 1.2rem;
+  margin: 0 auto;
+}
+
+/* --- STATISTICS --- */
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  background: white;
+  flex: 1;
+  padding: 25px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card h2 {
+  font-size: 1.1rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #d97706;
+}
+
+.unit {
+  font-size: 1.2rem;
+  color: #999;
+}
+
+/* --- FILTERS --- */
+.filter-container {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+  justify-content: center;
+}
+
+.search-input, .diet-select {
+  padding: 15px 20px;
+  font-size: 1.1rem;
+  border: 2px solid #eee;
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: white;
+  color: #333;
+  font-family: inherit;
+}
+
+.search-input {
+  width: 400px;
+}
+
+.search-input:focus, .diet-select:focus {
+  border-color: #d97706;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.2);
+}
+
+.diet-select {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d97706' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 16px;
+  padding-right: 45px;
+}
+
+.diet-select option {
+  color: #333;
+  background: white;
+}
+
+/* --- RECIPE CARDS --- */
+.recipe-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.recipe-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+}
+
+/* --- IMAGES --- */
+.image-wrapper {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.image-overlay {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-wrapper:hover .image-overlay {
+  opacity: 1;
+}
+
+.image-overlay span {
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: 2px solid white;
+  border: 8px;
+}
+
+/* --- CARD TEXT AND SPACING --- */
+.recipe-info {
+  padding: 20px;
+}
+
+.recipe-info h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  line-height: 1.4;
+  color: #222;
+}
+
+.recipe-tags {
+  display: flex;
+  gap: 10px;
+}
+
+.tag {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.tag-time {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.tag.veg {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.loading-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  padding: 40px;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+  .stats-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .filter-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .diet-select {
+    width: 100%;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+  }
+}  
