@@ -49,7 +49,7 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented user stories:
 
 <img src='https://i.imgur.com/SSOFqri.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
+![The API Bake-Off](https://github.com/user-attachments/assets/a9fd9285-6d6d-43c5-8d26-cf89978eef5f)
 GIF created with [ScreenToGif](https://www.screentogif.com/) for Windows
 
 ## Notes
